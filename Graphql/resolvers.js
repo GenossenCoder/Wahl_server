@@ -3,7 +3,7 @@ const resolver = {
     Query:{
         async events(){
             try{
-                const Events= await Event.find();
+                const Events= await Event.find().sort({createdAt:-1});
                 const Polls=[]
                 for(i in Events){
                     let Poll = {}
